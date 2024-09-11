@@ -134,7 +134,7 @@ public class Guacamaya {
      * pre: el arreglo unidades debe estar inicializado
      * pre: el arreglo no puede estar vacio 
      * 
-     * @return total Se devuelve el total de ventas como un entero
+     * @return double total Se devuelve el total de ventas como un entero
      */
 
     public static int calcularTotalUnidadesVendidas(){
@@ -156,7 +156,7 @@ public class Guacamaya {
      * sumando cada uno de los espacios y sus valores, y luego sumando el total con la cantidad de espacios
      * pre: El arreglo precios debe estar inicializado
      * pre: el arreglo no puede estar vacio
-     * @return promedio El arreglo devolvera el calculo del precio promedio en formato double 
+     * @return double promedio El arreglo devolvera el calculo del precio promedio en formato double 
      */
     public static double calcularPrecioPromedio(){
         double promedio = 0.0;
@@ -179,7 +179,7 @@ public class Guacamaya {
      * Multiplicando los valores de unidades y los de precios 
      * pre: Los arreglos unidades y precios deben estar inicializados
      * pre: el arreglo no puede estar vacio  
-     * @return ventasTotales El arreglo devolvera el total de dinero recaudado durante el dia 
+     * @return double ventasTotales El arreglo devolvera el total de dinero recaudado durante el dia 
      */
 
     public static double calcularVentasTotales(){
@@ -201,7 +201,7 @@ public class Guacamaya {
      * pre: los arreglos precios y unidades deben estar inicializados
      * pre: los arreglos no pueden estar vacios
      * @param double limite El limite de ventas dado por el usuario 
-     * @return contador El arreglo devolvera el numero de referencias que han superado el limite minimo de ventas
+     * @return int contador El arreglo devolvera el numero de referencias que han superado el limite minimo de ventas
      */
 
     public static int consultarReferenciasSobreLimite(double limite){
