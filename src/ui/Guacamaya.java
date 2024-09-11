@@ -98,33 +98,124 @@ public class Guacamaya {
         unidades = new int[referencias];
 
     }
+    /**
+     * Descripcion: Este metodo se encarga de solicitar los precios y la cantidad de cada una de las referencias, guardandolos
+     * en los arreglos, recorriendo el arreglo con la longitud ya dada por el usuario
+     * pre: El scanner debe estar inicializados 
+     * pre: Los arreglos precios y unidades deben estar inicializados
+     * pos: Los datos deben quedar ingresados en los arreglos 
+     * 
+     */
+    
 
     public static void solicitarDatos(){
 
+      
+        for (int i = 0; i < precios.length; i++) {
+
+
+        System.out.println("Digite el precio de la referencia "+(i+1));
+        
+            precios[i] = reader.nextDouble();
+        
+
+        System.out.println("Digite la cantidad de la referencia "+(i+1));
+        
+            unidades[i] = reader.nextInt();
+        
+        }
+        
      
     }
 
+    /**
+     * Descripcion:Este metodo se encarga de calcular el total de unidades vendidas en el dia recorriendo el arreglo unidades
+     * y sumando los valores de cada uno de los espacios del arreglo
+     * pre: el arreglo unidades debe estar inicializado
+     * pre: el arreglo no puede estar vacio 
+     * 
+     * @return total Se devuelve el total de ventas como un entero
+     */
+
     public static int calcularTotalUnidadesVendidas(){
 
-        return 0;
+        int total = 0;
+
+        for (int i = 0; i < unidades.length; i++){
+            total += unidades[i];
+
+        }
+
+
+
+        return total;
 
     }
-
+    /**
+     * Descripcion: El metodo debe calcular el precio promedio de las referencias de producto vendidas en el dia, recorriendo el arreglo precios 
+     * sumando cada uno de los espacios y sus valores, y luego sumando el total con la cantidad de espacios
+     * pre: El arreglo precios debe estar inicializado
+     * pre: el arreglo no puede estar vacio
+     * @return promedio El arreglo devolvera el calculo del precio promedio en formato double 
+     */
     public static double calcularPrecioPromedio(){
+        double promedio = 0.0;
+        int suma = 0;
 
-        return 0;
+        for (int i = 0; i < precios.length; i++){
+
+            suma+=precios[i];
+
+            promedio = suma/precios.length;
+
+        
+        }
+
+        return promedio;
 
     }
+    /**
+     * Descripcion: Calculara el dinero recaudado en las ventas totales durante el dia recorriendo los 2 arreglos. 
+     * Multiplicando los valores de unidades y los de precios 
+     * pre: Los arreglos unidades y precios deben estar inicializados
+     * pre: el arreglo no puede estar vacio  
+     * @return ventasTotales El arreglo devolvera el total de dinero recaudado durante el dia 
+     */
 
     public static double calcularVentasTotales(){
+        double ventasTotales = 0;
 
-        return 0;
+        for (int i = 0; i < unidades.length; i++){
+
+            ventasTotales += unidades[i]*precios[i];
+
+        }
+
+
+        return ventasTotales;
 
     }
+    /**
+     * Descripcion: el programa calculara el numero de referencias de productos que superaron un limite minimo de ventas, multiplicando
+     * los valores de precios y unidades, evaluando si cada una supero el limite o no.
+     * pre: los arreglos precios y unidades deben estar inicializados
+     * pre: los arreglos no pueden estar vacios
+     * @param double limite El limite de ventas dado por el usuario 
+     * @return contador El arreglo devolvera el numero de referencias que han superado el limite minimo de ventas
+     */
 
     public static int consultarReferenciasSobreLimite(double limite){
 
-        return 0;
+        int contador = 0;
+
+        for (int i = 0; i < precios.length;i++){
+
+            if ((precios[i]*unidades[i])>limite){
+                contador++;
+            }
+        }
+
+        return contador;
 
     }
 
